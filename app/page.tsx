@@ -1,42 +1,59 @@
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./components/SiteChrome";
 
-const features = [
-  { number: "01", title: "Practice with purpose", body: "Curriculum-aligned quizzes for Grades 9–12, with instant feedback, exam mode, clear explanations, and progress that follows you." },
-  { number: "02", title: "Built for limited data", body: "Download a unit once and continue studying offline. Your attempts and reports sync safely when your connection returns." },
-  { number: "03", title: "Know what to study next", body: "Daily goals, a weekly timetable, progress insights, and the upcoming Zemen Mastery Map turn practice into a realistic plan." },
+const featureHighlights = [
+  { tag: "Practice", title: "Questions that teach", body: "Work through curriculum-aligned questions in Instant Mode for immediate reasoning or Exam Mode for focused assessment.", accent: "violet" },
+  { tag: "Offline", title: "Keep learning without data", body: "Download a published unit once, study anywhere, and synchronize progress when your connection returns.", accent: "teal" },
+  { tag: "Progress", title: "See what is improving", body: "Track completed quizzes, study time, scores, streaks and topic-level growth across your phone and tablet.", accent: "orange" },
 ];
+
 const subjects = ["Mathematics", "Physics", "Chemistry", "Biology", "English", "History", "Geography", "Economics"];
 
 export default function Home() {
-  return <main>
-    <SiteHeader />
-    <section className="hero shell">
-      <div className="hero-copy">
-        <p className="eyebrow"><span /> Ethiopian curriculum · Grades 9–12</p>
-        <h1>Study with direction.<br /><em>Grow with confidence.</em></h1>
-        <p className="hero-lede">Zemen Academy turns serious exam preparation into a clear daily rhythm—strong questions, useful explanations, offline access, and progress you can understand.</p>
-        <div className="hero-actions"><Link className="button button-primary" href="/download">Get the Android app <span aria-hidden="true">↗</span></Link><a className="button button-secondary" href="#inside">See what is inside</a></div>
-        <div className="trust-row" aria-label="Product highlights"><span>Grades 9–12</span><i /><span>Natural & Social</span><i /><span>Offline study</span></div>
-      </div>
-      <div className="hero-visual" aria-label="Zemen Academy study dashboard preview">
-        <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-        <div className="phone-card">
-          <div className="phone-top"><span className="mini-mark">Z</span><span>Today’s plan</span><b>3/5</b></div>
-          <div className="focus-card"><p>YOUR NEXT FOCUS</p><h2>Quadratic equations</h2><span>Mathematics · Grade 10</span><div className="progress-track"><div /></div><small>68% mastery</small></div>
-          <div className="mini-grid"><div><b>12</b><span>Questions today</span></div><div><b>4</b><span>Day streak</span></div></div>
-          <div className="next-session"><span className="pulse" /><p><b>Physics at 6:30 PM</b><small>Timetable reminder</small></p></div>
+  return (
+    <main id="main-content">
+      <SiteHeader />
+      <section className="hero shell">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Built for Ethiopian students</p>
+          <h1>Learn deeper.<br /><em>Move forward.</em></h1>
+          <p className="hero-lede">Zemen Academy gives Grades 9–12 students a focused path through strong questions, understandable explanations, offline study and progress that feels real.</p>
+          <div className="hero-actions">
+            <Link className="button button-primary" href="/download">Download for Android <span aria-hidden="true">↗</span></Link>
+            <Link className="button button-secondary" href="/features">Explore the platform</Link>
+          </div>
+          <div className="trust-row" aria-label="Product highlights"><span>Grades 9–12</span><i /><span>Natural & Social</span><i /><span>Built for low data</span></div>
         </div>
-        <div className="floating-note note-a">Offline ready ✓</div><div className="floating-note note-b">+8% this week</div>
-      </div>
-    </section>
-    <section className="subject-strip" aria-label="Subjects"><div className="subject-track">{subjects.concat(subjects).map((subject, index) => <span key={`${subject}-${index}`}>{subject}<i>✦</i></span>)}</div></section>
-    <section id="inside" className="section shell">
-      <div className="section-heading"><p className="eyebrow"><span /> A smarter study loop</p><h2>More than a question bank.</h2><p>Every part of Zemen Academy is designed to move a student from “I tried” to “I understand.”</p></div>
-      <div className="feature-grid">{features.map((feature) => <article className="feature-card" key={feature.number}><span className="feature-number">{feature.number}</span><h3>{feature.title}</h3><p>{feature.body}</p></article>)}</div>
-    </section>
-    <section className="manifesto"><div className="shell manifesto-inner"><p className="eyebrow light"><span /> What makes Zemen different</p><h2>Not just whether you were wrong.<br /><em>Why you were wrong.</em></h2><p>Zemen’s learning system is being built to identify weak concepts and common misconceptions, then connect each student to the exact prerequisite and practice they need next.</p><div className="manifesto-pills"><span>Verified questions</span><span>Mistake notebook</span><span>Mastery by topic</span><span>Personal study path</span></div></div></section>
-    <section className="section shell final-cta"><div><p className="eyebrow"><span /> Start where you are</p><h2>Your next result begins with today’s session.</h2></div><Link className="button button-primary" href="/download">Download Zemen Academy <span aria-hidden="true">→</span></Link></section>
-    <SiteFooter />
-  </main>;
+        <div className="hero-stage" aria-label="Zemen Academy learning experience preview">
+          <div className="aurora aurora-a" /><div className="aurora aurora-b" />
+          <div className="dashboard-card">
+            <div className="dashboard-head"><span className="mini-logo">Z</span><div><small>WELCOME BACK</small><b>Today&apos;s study path</b></div><span className="status-dot">LIVE</span></div>
+            <div className="mastery-card"><small>NEXT MASTERY TARGET</small><h2>Linear equations</h2><p>Mathematics · Grade 9</p><div className="meter"><span /></div><div className="meter-label"><b>68% ready</b><span>12 questions left</span></div></div>
+            <div className="metric-row"><div><span>7</span><small>day rhythm</small></div><div><span>84%</span><small>best score</small></div><div><span>3</span><small>units offline</small></div></div>
+            <div className="schedule-card"><span className="schedule-icon">⌁</span><div><b>Physics practice</b><small>Starts at 6:30 PM</small></div><span>Today</span></div>
+          </div>
+          <div className="float-chip chip-one">✓ Progress synced</div><div className="float-chip chip-two">+12 mastery points</div>
+        </div>
+      </section>
+
+      <section className="proof-bar"><div className="shell proof-grid"><div><b>4</b><span>secondary grades</span></div><div><b>2</b><span>practice modes</span></div><div><b>1</b><span>phone + 1 tablet</span></div><div><b>24/7</b><span>offline access</span></div></div></section>
+
+      <section className="section shell">
+        <div className="section-heading split-heading"><div><p className="eyebrow"><span /> One connected study system</p><h2>Every session should lead somewhere.</h2></div><p>Zemen turns scattered practice into a simple loop: choose a goal, study with feedback, understand mistakes and return stronger.</p></div>
+        <div className="feature-grid">{featureHighlights.map((feature, index) => <article className={`feature-card ${feature.accent}`} key={feature.title}><span className="feature-index">0{index + 1}</span><p className="feature-tag">{feature.tag}</p><h3>{feature.title}</h3><p>{feature.body}</p><Link href="/features">Discover more <span>→</span></Link></article>)}</div>
+      </section>
+
+      <section className="subjects-section">
+        <div className="shell subjects-layout"><div><p className="eyebrow light"><span /> Curriculum coverage</p><h2>Your subjects.<br />One focused place.</h2><p>Study unit by unit across the Ethiopian secondary curriculum, with more subjects and past papers added as they are verified.</p><Link className="text-link" href="/features">See how content works →</Link></div><div className="subject-cloud">{subjects.map((subject, index) => <span key={subject} style={{ "--delay": `${index * 0.06}s` } as React.CSSProperties}>{subject}<i>{String(index + 1).padStart(2, "0")}</i></span>)}</div></div>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading"><p className="eyebrow"><span /> A clear learning rhythm</p><h2>Open. Practice. Understand. Repeat.</h2></div>
+        <div className="steps-grid"><article><span>01</span><div><h3>Choose your next unit</h3><p>Find published content for your grade, stream and subject without searching through irrelevant material.</p></div></article><article><span>02</span><div><h3>Practice your way</h3><p>Use instant explanations while learning, or enter a timed exam environment when you are ready to test yourself.</p></div></article><article><span>03</span><div><h3>Turn mistakes into direction</h3><p>Review every answer, report unclear questions and use your progress to decide what deserves your attention next.</p></div></article></div>
+      </section>
+
+      <section className="closing shell"><div><p className="eyebrow light"><span /> Start where you are</p><h2>Your next result begins with one focused session.</h2><p>Install Zemen Academy on Android and take your study plan wherever you go.</p></div><Link className="button button-bright" href="/download">Get Zemen Academy <span>↗</span></Link></section>
+      <SiteFooter />
+    </main>
+  );
 }

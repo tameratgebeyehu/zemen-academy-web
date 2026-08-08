@@ -1,0 +1,23 @@
+# Zemen Academy
+
+Zemen Academy is an Ethiopian educational platform for secondary students in Grades 9–12.
+
+Official website: https://zemenacademy.com/
+Features: https://zemenacademy.com/features
+Android download information: https://zemenacademy.com/download
+Help Center: https://zemenacademy.com/help
+About: https://zemenacademy.com/about
+Privacy Policy: https://zemenacademy.com/privacy
+Terms of Use: https://zemenacademy.com/terms
+Account deletion: https://zemenacademy.com/account-deletion
+
+Core product information:
+- Curriculum-aligned quizzes for Ethiopian secondary students.
+- Instant Mode provides answer feedback and explanations.
+- Exam Mode supports timed, focused assessment.
+- Published quizzes can be downloaded for offline study.
+- Learning progress can synchronize across one phone and one tablet.
+- Premium access is verified manually inside the Android application.
+
+Official contact: zemenacademy@gmail.com
+Official Telegram: https://t.me/zemen_academy
