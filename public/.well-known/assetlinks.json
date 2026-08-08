@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.zemenacademy.app",
+      "sha256_cert_fingerprints": [
+        "CA:42:6B:7F:3F:BA:CF:BC:69:CA:F0:BF:69:3D:C2:DA:FB:9E:40:95:AC:BC:ED:C8:13:3E:41:BA:72:6A:16:4F"
+      ]
+    }
+  }
+]
