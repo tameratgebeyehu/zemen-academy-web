@@ -1,9 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 const navigation = [
   { href: "/", label: "Home" },
@@ -14,36 +9,33 @@ const navigation = [
 
 export function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="Zemen Academy home">
+    <a className="brand" href="/" aria-label="Zemen Academy home">
       <Image src="/zemen-academy-logo.png" alt="" width={44} height={44} priority />
       <span>ZEMEN<small>ACADEMY</small></span>
-    </Link>
+    </a>
   );
 }
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-
   return (
     <header className="site-header">
       <div className="shell header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Main navigation">
-          {navigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
+          {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
         <div className="header-actions">
-          <Link className="nav-download" href="/download">Get the app</Link>
-          <button className="menu-toggle" type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((current) => !current)}>
-            <span /><span />
-          </button>
+          <a className="nav-download" href="/download#official-download">Get the app</a>
+          <details className="mobile-menu">
+            <summary className="menu-toggle" aria-label="Open navigation menu"><span /><span /></summary>
+            <div className="mobile-nav">
+              <nav className="shell" aria-label="Mobile navigation">
+                {navigation.map((item, index) => <a key={item.href} href={item.href}><span>0{index + 1}</span>{item.label}</a>)}
+                <a className="mobile-download" href="/download#official-download">Download Android app</a>
+              </nav>
+            </div>
+          </details>
         </div>
-      </div>
-      <div id="mobile-navigation" className={`mobile-nav ${open ? "is-open" : ""}`}>
-        <nav className="shell" aria-label="Mobile navigation">
-          {navigation.map((item, index) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</Link>)}
-          <Link className="mobile-download" href="/download" onClick={() => setOpen(false)}>Download Android app</Link>
-        </nav>
       </div>
     </header>
   );
@@ -54,9 +46,9 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div className="footer-brand"><Brand /><p>Focused, curriculum-aligned learning for Ethiopian secondary students.</p></div>
-        <div><b>Explore</b><Link href="/features">Features</Link><Link href="/download">Download</Link><Link href="/about">About Zemen</Link><Link href="/help">Help Center</Link></div>
-        <div><b>Legal & account</b><Link href="/privacy">Privacy Policy</Link><Link href="/terms">Terms of Use</Link><Link href="/account-deletion">Account deletion</Link></div>
-        <div><b>Connect</b><a href="https://t.me/zemen_academy" rel="me">Telegram</a><a href="https://www.youtube.com/@ZemenAcademy" rel="me">YouTube</a><a href="https://www.tiktok.com/@zemen_academy" rel="me">TikTok</a><a href="https://www.instagram.com/zemen_academy" rel="me">Instagram</a></div>
+        <div className="footer-links"><b>Explore</b><a href="/features">Features</a><a href="/download#official-download">Download</a><a href="/about">About Zemen</a><a href="/help">Help Center</a></div>
+        <div className="footer-links"><b>Legal & account</b><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a><a href="/account-deletion">Account deletion</a></div>
+        <div className="footer-links footer-connect"><b>Connect</b><a href="https://t.me/zemen_academy" rel="me">Telegram</a><a href="https://www.youtube.com/@ZemenAcademy" rel="me">YouTube</a><a href="https://www.tiktok.com/@zemen_academy" rel="me">TikTok</a><a href="https://www.instagram.com/zemen_academy" rel="me">Instagram</a></div>
       </div>
       <div className="shell footer-bottom"><span>© 2026 Zemen Academy. Built for Ethiopian students.</span><a href="mailto:zemenacademy@gmail.com">zemenacademy@gmail.com</a></div>
     </footer>

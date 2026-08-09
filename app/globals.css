@@ -322,3 +322,62 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+/* Final interaction and responsive pass */
+.dashboard-notice { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 11px; margin-top: 11px; padding: 13px 15px; border: 1px solid #29483f; border-radius: 16px; background: #121e25; }
+.dashboard-notice > span { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 10px; background: #173d34; color: #65e1bb; font-weight: 900; }
+.dashboard-notice > div { display: grid; gap: 2px; }
+.dashboard-notice b { font-size: 11px; }
+.dashboard-notice small { color: #8fa9a2; font-size: 9px; }
+.proof-grid > div { min-width: 0; gap: 5px; padding-block: 30px; }
+.proof-grid b { color: var(--violet); font-size: 18px; line-height: 1.15; }
+.proof-grid strong { font-size: 13px; line-height: 1.35; }
+.proof-grid span { max-width: 210px; font-size: 11px; line-height: 1.5; }
+.feature-card { display: flex; flex-direction: column; }
+.feature-card h3 { margin-top: 100px; }
+.feature-card > p:not(.feature-tag) { margin-bottom: 24px; }
+.feature-card > a { position: static; display: inline-flex; align-items: center; gap: 8px; width: max-content; max-width: 100%; min-height: 44px; margin-top: auto; padding: 0 14px; border-radius: 12px; background: #f1f3f8; }
+.feature-card > a:hover { background: var(--navy); color: white; }
+#curriculum-coverage, #practice-modes, #offline-study, #progress-tracking, #official-download { scroll-margin-top: 100px; }
+.footer-links a { min-height: 30px; display: inline-flex; align-items: center; }
+.footer-connect { align-content: start; }
+.footer-connect a { padding: 7px 10px; border: 1px solid #2c344b; border-radius: 999px; background: #151b2d; }
+@media (max-width: 960px) {
+  .float-chip { display: none; }
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+  .proof-grid > div { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 520px) {
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-grid > div, .proof-grid > div:first-child, .proof-grid > div:nth-child(even) { padding: 22px 18px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+  .proof-grid b { font-size: 17px; }
+  .proof-grid span { max-width: none; }
+  .feature-card, .feature-card:last-child { min-height: 345px; padding: 24px; }
+  .feature-card h3, .feature-card:last-child h3 { margin-top: 72px; }
+  .feature-card > a { width: 100%; justify-content: space-between; }
+  .subjects-layout { gap: 45px; }
+  .text-link { display: inline-flex; min-height: 48px; align-items: center; line-height: 1.4; }
+  .site-footer { padding-top: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-links { min-width: 0; }
+  .footer-connect { grid-column: 1 / -1 !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 8px !important; }
+  .footer-connect b { flex-basis: 100%; }
+  .footer-connect a { min-height: 38px; }
+  .footer-bottom { margin-top: 36px; }
+}
+
+.dashboard-notice > span::before { content: "\2713"; }
+.mobile-menu { display: none; }
+.mobile-menu summary { list-style: none; }
+.mobile-menu summary::-webkit-details-marker { display: none; }
+@media (max-width: 760px) {
+  .header-actions > .menu-toggle { display: none; }
+  .mobile-menu { display: block; }
+  .mobile-menu > .menu-toggle { display: block; }
+  .mobile-menu .mobile-nav { position: absolute; top: 100%; left: 0; right: 0; width: 100%; display: grid; grid-template-rows: 0fr; overflow: hidden; border-top: 0 solid var(--line); background: rgba(245,247,251,.99); box-shadow: 0 20px 40px rgba(24,31,54,.12); transition: grid-template-rows .22s ease, border-width .22s ease; }
+  .mobile-menu[open] .mobile-nav { grid-template-rows: 1fr; border-top-width: 1px; }
+  .mobile-menu[open] .menu-toggle span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .mobile-menu[open] .menu-toggle span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+}

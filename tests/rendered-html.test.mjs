@@ -37,6 +37,36 @@ for (const [pathname, expectedText] of routes) {
   });
 }
 
+test("homepage actions resolve to real pages and section targets", async () => {
+  const homeResponse = await render("/");
+  const homeHtml = await homeResponse.text();
+  const targets = [
+    "/features",
+    "/features#practice-modes",
+    "/features#offline-study",
+    "/features#progress-tracking",
+    "/features#curriculum-coverage",
+    "/download#official-download",
+    "/help",
+    "/about",
+    "/privacy",
+    "/terms",
+    "/account-deletion",
+  ];
+
+  for (const target of targets) {
+    const [pathname, fragment] = target.split("#");
+    const response = await render(pathname);
+    assert.equal(response.status, 200, target);
+    const html = await response.text();
+    if (fragment) assert.ok(html.includes('id="' + fragment + '"'), target);
+  }
+
+  for (const target of targets.slice(1, 6)) assert.ok(homeHtml.includes('href="' + target + '"'), target);
+  assert.doesNotMatch(homeHtml, /mastery points|Progress synced/);
+  assert.match(homeHtml, /Content is organized for the grade and stream you select/);
+});
+
 test("publishes valid Android Digital Asset Links metadata", async () => {
   const raw = await readFile(new URL("../public/.well-known/assetlinks.json", import.meta.url), "utf8");
   const statements = JSON.parse(raw);
