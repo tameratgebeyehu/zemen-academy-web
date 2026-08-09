@@ -220,8 +220,8 @@ img { max-width: 100%; }
 .install-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 22px; }
 
 .download-panel { position: relative; display: grid; justify-items: center; overflow: hidden; margin-bottom: 45px; padding: 62px 30px; border-radius: 32px; background: radial-gradient(circle at 80% 20%, #483796, transparent 38%), radial-gradient(circle at 10% 100%, #0c755f, transparent 35%), var(--navy); color: white; text-align: center; }
-.download-logo { width: 116px; height: 116px; display: grid; place-items: center; margin-bottom: 24px; border-radius: 29px; background: white; box-shadow: 0 22px 55px rgba(0,0,0,.22); }
-.download-logo img { width: 100px; height: 100px; object-fit: contain; }
+.download-logo { width: 116px; height: 116px; display: grid; place-items: center; overflow: hidden; margin-bottom: 24px; border: 2px solid rgba(255,255,255,.2); border-radius: 50%; background: white; box-shadow: 0 22px 55px rgba(0,0,0,.22); }
+.download-logo img { width: 100px; height: 100px; display: block; object-fit: contain; border-radius: 50%; }
 .download-label { margin: 0 0 10px !important; color: #a89cff !important; font-size: 10px; font-weight: 900; letter-spacing: .15em; }
 .download-panel h2 { max-width: 630px; margin: 0; font-size: clamp(36px, 5vw, 56px); letter-spacing: -.055em; }
 .download-panel > p:not(.download-label) { max-width: 620px; color: #b8c0d2; }.download-panel small { margin-top: 17px; color: #919ab0; }

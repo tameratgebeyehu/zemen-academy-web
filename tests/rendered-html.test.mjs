@@ -95,3 +95,9 @@ test("publishes the IndexNow ownership key", async () => {
   const key = "7c3f9a2d8b1e4f60a5c7d9e2f4b6a810";
   assert.equal((await readFile(new URL(`../public/${key}.txt`, import.meta.url), "utf8")).trim(), key);
 });
+
+test("download logo uses the centered circular brand treatment", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.download-logo \{[^}]*place-items: center;[^}]*overflow: hidden;[^}]*border-radius: 50%;/);
+  assert.match(css, /\.download-logo img \{[^}]*display: block;[^}]*object-fit: contain;[^}]*border-radius: 50%;/);
+});
