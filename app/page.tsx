@@ -52,7 +52,18 @@ export default function Home() {
         <div className="steps-grid"><article><span>01</span><div><h3>Choose your next unit</h3><p>Find published content for your grade, stream and subject without searching through irrelevant material.</p></div></article><article><span>02</span><div><h3>Practice your way</h3><p>Use instant explanations while learning, or enter a timed exam environment when you are ready to test yourself.</p></div></article><article><span>03</span><div><h3>Turn mistakes into direction</h3><p>Review every answer, report unclear questions and use your progress to decide what deserves your attention next.</p></div></article></div>
       </section>
 
-      <section className="closing shell"><div><p className="eyebrow light"><span /> Start where you are</p><h2>Your next result begins with one focused session.</h2><p>Install Zemen Academy on Android and take your study plan wherever you go.</p></div><Link className="button button-bright" href="/download">Get Zemen Academy <span>↗</span></Link></section>
+      <section className="closing shell">
+        <div className="closing-copy">
+          <p className="eyebrow light"><span /> Start where you are</p>
+          <h2>One focused session can change your next result.</h2>
+          <p>Choose a subject, understand one difficult idea, and build from there. Zemen Academy keeps the next step clear.</p>
+        </div>
+        <div className="closing-action">
+          <span className="closing-badge">ANDROID · GRADES 9–12</span>
+          <Link className="button button-bright" href="/download">Get Zemen Academy <span aria-hidden="true">↗</span></Link>
+          <small>Download from the official Zemen Academy channel.</small>
+        </div>
+      </section>
       <SiteFooter />
     </main>
   );

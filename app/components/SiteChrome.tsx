@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navigation = [
@@ -22,13 +23,14 @@ export function Brand() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="site-header">
       <div className="shell header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Main navigation">
-          {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+          {navigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
         </nav>
         <div className="header-actions">
           <Link className="nav-download" href="/download">Get the app</Link>
@@ -39,7 +41,7 @@ export function SiteHeader() {
       </div>
       <div id="mobile-navigation" className={`mobile-nav ${open ? "is-open" : ""}`}>
         <nav className="shell" aria-label="Mobile navigation">
-          {navigation.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</Link>)}
+          {navigation.map((item, index) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</Link>)}
           <Link className="mobile-download" href="/download" onClick={() => setOpen(false)}>Download Android app</Link>
         </nav>
       </div>
