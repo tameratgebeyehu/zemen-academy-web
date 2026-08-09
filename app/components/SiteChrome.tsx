@@ -45,12 +45,26 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="shell footer-grid">
-        <div className="footer-brand"><Brand /><p>Focused, curriculum-aligned learning for Ethiopian secondary students.</p></div>
+        <div className="footer-brand">
+          <a className="footer-logo" href="/" aria-label="Zemen Academy home">
+            <Image src="/zemen-academy-logo.png" alt="" width={48} height={48} />
+          </a>
+          <p>Focused, curriculum-aligned learning for Ethiopian secondary students.</p>
+        </div>
         <div className="footer-links"><b>Explore</b><a href="/features">Features</a><a href="/download#official-download">Download</a><a href="/about">About Zemen</a><a href="/help">Help Center</a></div>
         <div className="footer-links"><b>Legal & account</b><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a><a href="/account-deletion">Account deletion</a></div>
-        <div className="footer-links footer-connect"><b>Connect</b><a href="https://t.me/zemen_academy" rel="me">Telegram</a><a href="https://www.youtube.com/@ZemenAcademy" rel="me">YouTube</a><a href="https://www.tiktok.com/@zemen_academy" rel="me">TikTok</a><a href="https://www.instagram.com/zemen_academy" rel="me">Instagram</a></div>
+        <div className="footer-connect" aria-label="Connect with Zemen Academy">
+          <b>Connect</b>
+          <div className="footer-socials">
+            <a href="https://t.me/zemen_academy" rel="me" aria-label="Zemen Academy on Telegram" title="Telegram"><span aria-hidden="true">&#9992;</span></a>
+            <a href="https://www.youtube.com/@ZemenAcademy" rel="me" aria-label="Zemen Academy on YouTube" title="YouTube"><span aria-hidden="true">&#9654;</span></a>
+            <a href="https://www.tiktok.com/@zemen_academy" rel="me" aria-label="Zemen Academy on TikTok" title="TikTok"><span aria-hidden="true">&#9834;</span></a>
+            <a href="https://www.instagram.com/zemen_academy" rel="me" aria-label="Zemen Academy on Instagram" title="Instagram"><span aria-hidden="true">&#9678;</span></a>
+            <a href="mailto:zemenacademy@gmail.com" aria-label="Email Zemen Academy" title="Email"><span aria-hidden="true">&#9993;</span></a>
+          </div>
+        </div>
       </div>
-      <div className="shell footer-bottom"><span>© 2026 Zemen Academy. Built for Ethiopian students.</span><a href="mailto:zemenacademy@gmail.com">zemenacademy@gmail.com</a></div>
+      <div className="shell footer-bottom"><span>© 2026 Zemen Academy. Built for Ethiopian students.</span></div>
     </footer>
   );
 }

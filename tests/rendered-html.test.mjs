@@ -67,6 +67,20 @@ test("homepage actions resolve to real pages and section targets", async () => {
   assert.match(homeHtml, /Content is organized for the grade and stream you select/);
 });
 
+test("shared mobile navigation and compact footer stay accessible", async () => {
+  const response = await render("/account-deletion");
+  const html = await response.text();
+
+  assert.match(html, /class="menu-toggle" aria-label="Open navigation menu"/);
+  assert.match(html, /class="footer-socials"/);
+  assert.match(html, /aria-label="Zemen Academy on Telegram"/);
+  assert.match(html, /aria-label="Zemen Academy on YouTube"/);
+  assert.match(html, /aria-label="Zemen Academy on TikTok"/);
+  assert.match(html, /aria-label="Zemen Academy on Instagram"/);
+  assert.match(html, /aria-label="Email Zemen Academy"/);
+  assert.match(html, /class="shell footer-bottom"><span>© 2026 Zemen Academy\. Built for Ethiopian students\.<\/span><\/div>/);
+});
+
 test("publishes valid Android Digital Asset Links metadata", async () => {
   const raw = await readFile(new URL("../public/.well-known/assetlinks.json", import.meta.url), "utf8");
   const statements = JSON.parse(raw);
