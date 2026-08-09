@@ -297,7 +297,7 @@ img { max-width: 100%; }
   .hero { min-height: auto; padding-block: 50px 70px; }
   .hero h1 { max-width: 100%; font-size: clamp(45px, 13.5vw, 58px); }.hero-lede { font-size: 16px; line-height: 1.62; }.hero-actions .button { width: 100%; }
   .trust-row { gap: 8px; font-size: 10px; }.trust-row i { width: 4px; height: 4px; }
-  .hero-stage { min-height: 455px; margin-inline: 0; }.dashboard-card { width: min(340px, calc(100vw - 40px)); padding: 18px; border-radius: 28px; transform: none; }.mastery-card { padding: 21px; }.mastery-card h2 { font-size: 25px; }.metric-row small { font-size: 8px; }.float-chip { display: none; }.aurora-a, .aurora-b { width: min(340px, 90vw); height: min(340px, 90vw); }
+  .hero-stage { min-height: 455px; margin-inline: 0; overflow: hidden; border-radius: 30px; }.dashboard-card { width: min(340px, calc(100vw - 40px)); padding: 18px; border-radius: 28px; transform: none; }.mastery-card { padding: 21px; }.mastery-card h2 { font-size: 25px; }.metric-row small { font-size: 8px; }.float-chip { display: none; }.aurora-a, .aurora-b { width: min(340px, 90vw); height: min(340px, 90vw); }.aurora-b { transform: none; }
   .proof-grid > div { padding: 20px 18px; }.proof-grid b { font-size: 21px; }
   .section-heading h2, .subjects-layout h2, .closing h2, .feature-callout h2 { font-size: 41px; }
   .split-heading { gap: 20px; }.feature-grid { margin-top: 40px; }
