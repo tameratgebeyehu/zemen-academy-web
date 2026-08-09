@@ -78,6 +78,8 @@ test("shared mobile navigation and compact footer stay accessible", async () => 
   assert.match(html, /aria-label="Zemen Academy on TikTok"/);
   assert.match(html, /aria-label="Zemen Academy on Instagram"/);
   assert.match(html, /aria-label="Email Zemen Academy"/);
+  assert.match(html, /class="footer-socials">[\s\S]*?<svg/);
+  assert.doesNotMatch(html, /[✈▶♪◎✉]/);
   assert.match(html, /class="shell footer-bottom"><span>© 2026 Zemen Academy\. Built for Ethiopian students\.<\/span><\/div>/);
 });
 

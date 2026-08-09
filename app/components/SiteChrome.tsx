@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { MdEmail } from "react-icons/md";
+import { SiInstagram, SiTelegram, SiTiktok, SiYoutube } from "react-icons/si";
 
 const navigation = [
   { href: "/", label: "Home" },
@@ -56,11 +58,11 @@ export function SiteFooter() {
         <div className="footer-connect" aria-label="Connect with Zemen Academy">
           <b>Connect</b>
           <div className="footer-socials">
-            <a href="https://t.me/zemen_academy" rel="me" aria-label="Zemen Academy on Telegram" title="Telegram"><span aria-hidden="true">&#9992;</span></a>
-            <a href="https://www.youtube.com/@ZemenAcademy" rel="me" aria-label="Zemen Academy on YouTube" title="YouTube"><span aria-hidden="true">&#9654;</span></a>
-            <a href="https://www.tiktok.com/@zemen_academy" rel="me" aria-label="Zemen Academy on TikTok" title="TikTok"><span aria-hidden="true">&#9834;</span></a>
-            <a href="https://www.instagram.com/zemen_academy" rel="me" aria-label="Zemen Academy on Instagram" title="Instagram"><span aria-hidden="true">&#9678;</span></a>
-            <a href="mailto:zemenacademy@gmail.com" aria-label="Email Zemen Academy" title="Email"><span aria-hidden="true">&#9993;</span></a>
+            <a href="https://t.me/zemen_academy" rel="me" aria-label="Zemen Academy on Telegram" title="Telegram"><SiTelegram aria-hidden="true" /></a>
+            <a href="https://www.youtube.com/@ZemenAcademy" rel="me" aria-label="Zemen Academy on YouTube" title="YouTube"><SiYoutube aria-hidden="true" /></a>
+            <a href="https://www.tiktok.com/@zemen_academy" rel="me" aria-label="Zemen Academy on TikTok" title="TikTok"><SiTiktok aria-hidden="true" /></a>
+            <a href="https://www.instagram.com/zemen_academy" rel="me" aria-label="Zemen Academy on Instagram" title="Instagram"><SiInstagram aria-hidden="true" /></a>
+            <a href="mailto:zemenacademy@gmail.com" aria-label="Email Zemen Academy" title="Email"><MdEmail aria-hidden="true" /></a>
           </div>
         </div>
       </div>
