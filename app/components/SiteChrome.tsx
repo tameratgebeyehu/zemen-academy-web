@@ -5,6 +5,7 @@ import { SiInstagram, SiTelegram, SiTiktok, SiYoutube } from "react-icons/si";
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
+  { href: "/premium", label: "Premium" },
   { href: "/help", label: "Help Center" },
   { href: "/about", label: "About" },
 ];
@@ -53,7 +54,7 @@ export function SiteFooter() {
           </a>
           <p>Focused, curriculum-aligned learning for Ethiopian secondary students.</p>
         </div>
-        <div className="footer-links"><b>Explore</b><a href="/features">Features</a><a href="/download#official-download">Download</a><a href="/about">About Zemen</a><a href="/help">Help Center</a></div>
+        <div className="footer-links"><b>Explore</b><a href="/features">Features</a><a href="/premium">Premium</a><a href="/download#official-download">Download</a><a href="/about">About Zemen</a><a href="/help">Help Center</a></div>
         <div className="footer-links"><b>Legal & account</b><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a><a href="/account-deletion">Account deletion</a></div>
         <div className="footer-connect" aria-label="Connect with Zemen Academy">
           <b>Connect</b>

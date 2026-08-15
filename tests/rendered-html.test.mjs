@@ -21,6 +21,7 @@ async function render(pathname) {
 const routes = [
   ["/", /Learn deeper/],
   ["/features", /Built around how students actually study/],
+  ["/premium", /Complete access/],
   ["/about", /A clearer path for every serious student/],
   ["/help", /Answers without the runaround/],
   ["/download", /Your study plan, wherever you go/],
@@ -46,6 +47,7 @@ test("homepage actions resolve to real pages and section targets", async () => {
   const homeHtml = await homeResponse.text();
   const targets = [
     "/features",
+    "/premium",
     "/features#practice-modes",
     "/features#offline-study",
     "/features#progress-tracking",

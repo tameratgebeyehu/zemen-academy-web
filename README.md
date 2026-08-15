@@ -7,6 +7,7 @@ Official public website for Zemen Academy at `zemenacademy.com`.
 - Home
 - Download
 - Help center
+- Premium account activation
 - Privacy policy
 - Terms of service
 - Account deletion
@@ -26,6 +27,10 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Premium portal configuration
+
+The server-side portal uses the existing Zemen Academy Apps Script deployment. `ZEMEN_APPS_SCRIPT_URL` can override the current deployment URL in the hosted environment. To embed the optional walkthrough video, set `NEXT_PUBLIC_PREMIUM_GUIDE_VIDEO_ID` to the YouTube video ID.
 
 The production server can then be started with:
 
