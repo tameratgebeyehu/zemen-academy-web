@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 export const metadata: Metadata = {
@@ -13,11 +14,12 @@ const features = [
   { id: "instant-mode", icon: "I", title: "Instant learning mode", body: "Answer one question and immediately see the correct choice and reasoning, without hiding the remaining options or interrupting the flow." },
   { id: "exam-mode", icon: "E", title: "Focused exam mode", body: "Use one minute per question, clear attempt rules and a complete result review when you want a realistic assessment." },
   { id: "offline-study", icon: "O", title: "Offline study", body: "Download a quiz once and continue without mobile data. Pending progress and question reports synchronize when the device reconnects." },
-  { id: "progress-tracking", icon: "P", title: "Progress across devices", body: "Keep quiz history, scores, completed work and study activity connected when moving between one phone and one tablet." },
+  { id: "progress-tracking", icon: "P", title: "Progress across study spaces", body: "Keep quiz history, scores and completed work connected when moving between your Android devices and the secure student web app." },
   { id: "goals-timetables", icon: "T", title: "Goals and timetables", body: "Set a realistic daily target, build a weekly study rhythm and use reminders to return at the time you planned." },
   { id: "question-reporting", icon: "R", title: "Question reporting", body: "Flag a wrong answer, unclear question or other issue directly from the quiz so the content team can review it." },
   { id: "announcements", icon: "N", title: "Relevant announcements", body: "Receive welcome messages, important academy updates and new-content notices filtered for the right grade and stream." },
-  { id: "premium-access", icon: "PRO", title: "Premium access", body: "Unlock the complete learning experience, including full subject access, Premium recovery support and future notes and past papers." },
+  { id: "premium-access", icon: "PRO", title: "Premium access", body: "Unlock all published Premium quiz units and complete study notes while your subscription is active on the account." },
+  { id: "platform-access", icon: "4", title: "One connected account", body: "Study on one linked Android phone, one linked Android tablet and the web today. A focused Windows application is the next supported space." },
 ];
 
 const studyFlow = [
@@ -31,7 +33,7 @@ export default function FeaturesPage() {
   return (
     <main id="main-content">
       <SiteHeader />
-      <section className="page-hero shell feature-hero"><div className="breadcrumb"><a href="/">Home</a><span>/</span><span>Features</span></div><p className="eyebrow"><span /> The complete platform</p><h1>Built around how students actually study.</h1><p>Zemen Academy connects practice, feedback, offline access and progress in one calm learning experience for Grades 9–12.</p></section>
+      <section className="page-hero shell feature-hero"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><span>Features</span></div><p className="eyebrow"><span /> The complete platform</p><h1>Built around how students actually study.</h1><p>Zemen Academy connects practice, feedback, offline access and progress in one calm learning experience for Grades 9–12.</p></section>
       <section id="curriculum-coverage" className="feature-intro shell" aria-label="How learning content is organized"><div><b>GRADES 9-12</b><span>Content follows the secondary grade selected by the student.</span></div><div><b>SUBJECTS</b><span>Mathematics, Physics, Chemistry, Biology and more.</span></div><div><b>UNIT BY UNIT</b><span>Open the exact unit you are studying instead of searching one large library.</span></div><div><b>NATURAL + SOCIAL</b><span>Relevant stream choices appear where the curriculum requires them.</span></div></section>
       <section className="shell product-grid">{features.map((feature, index) => <article id={feature.id} key={feature.title}><div className="product-icon">{feature.icon}</div><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
       <section id="practice-modes" className="mode-section shell">

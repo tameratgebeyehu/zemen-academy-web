@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MdEmail } from "react-icons/md";
 import { SiInstagram, SiTelegram, SiTiktok, SiYoutube } from "react-icons/si";
 
@@ -12,10 +13,10 @@ const navigation = [
 
 export function Brand() {
   return (
-    <a className="brand" href="/" aria-label="Zemen Academy home">
+    <Link className="brand" href="/" aria-label="Zemen Academy home">
       <Image src="/zemen-academy-logo.png" alt="" width={44} height={44} priority />
       <span>ZEMEN<small>ACADEMY</small></span>
-    </a>
+    </Link>
   );
 }
 
@@ -28,16 +29,34 @@ export function SiteHeader() {
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
         <div className="header-actions">
+          <a className="nav-web-app" href="https://app.zemenacademy.com">Open web app</a>
           <a className="nav-download" href="/download#official-download">Get the app</a>
           <details className="mobile-menu">
             <summary className="menu-toggle" aria-label="Open navigation menu"><span /><span /></summary>
             <div className="mobile-nav">
               <nav className="shell" aria-label="Mobile navigation">
                 {navigation.map((item, index) => <a key={item.href} href={item.href}><span>0{index + 1}</span>{item.label}</a>)}
+                <a href="https://app.zemenacademy.com"><span>06</span>Open student web app</a>
                 <a className="mobile-download" href="/download#official-download">Download Android app</a>
               </nav>
             </div>
           </details>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export function AccountControlHeader() {
+  return (
+    <header className="site-header">
+      <div className="shell header-inner">
+        <div className="brand" aria-label="Zemen Academy">
+          <Image src="/zemen-academy-logo.png" alt="" width={44} height={44} priority />
+          <span>ZEMEN<small>ACADEMY</small></span>
+        </div>
+        <div className="header-actions">
+          <a className="nav-download" href="mailto:zemenacademy@gmail.com?subject=Delete%20my%20Zemen%20Academy%20account">Email account support</a>
         </div>
       </div>
     </header>
@@ -49,9 +68,9 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <a className="footer-logo" href="/" aria-label="Zemen Academy home">
+          <Link className="footer-logo" href="/" aria-label="Zemen Academy home">
             <Image src="/zemen-academy-logo.png" alt="" width={48} height={48} />
-          </a>
+          </Link>
           <p>Focused, curriculum-aligned learning for Ethiopian secondary students.</p>
         </div>
         <div className="footer-links"><b>Explore</b><a href="/features">Features</a><a href="/premium">Premium</a><a href="/download#official-download">Download</a><a href="/about">About Zemen</a><a href="/help">Help Center</a></div>
@@ -68,6 +87,28 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell footer-bottom"><span>© 2026 Zemen Academy. Built for Ethiopian students.</span></div>
+    </footer>
+  );
+}
+
+export function AccountControlFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="shell footer-grid">
+        <div className="footer-brand">
+          <span className="footer-logo" aria-hidden="true">
+            <Image src="/zemen-academy-logo.png" alt="" width={48} height={48} />
+          </span>
+          <p>Zemen Academy account and privacy support.</p>
+        </div>
+        <div className="footer-connect" aria-label="Contact Zemen Academy account support">
+          <b>Account support</b>
+          <div className="footer-socials">
+            <a href="mailto:zemenacademy@gmail.com?subject=Delete%20my%20Zemen%20Academy%20account" aria-label="Email Zemen Academy account support" title="Email"><MdEmail aria-hidden="true" /></a>
+          </div>
+        </div>
+      </div>
+      <div className="shell footer-bottom"><span>© 2026 Zemen Academy. Account control.</span></div>
     </footer>
   );
 }
