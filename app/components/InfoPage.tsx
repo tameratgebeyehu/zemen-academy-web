@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 
 type Tone = "violet" | "teal" | "orange" | "blue";
@@ -35,7 +36,7 @@ export function InfoPage({
       <section className={`page-hero-wrap page-tone-${tone}`}>
         <div className="page-hero shell">
           <div className="page-hero-copy">
-            <div className="breadcrumb"><a href="/">Home</a><span>/</span><span>{eyebrow}</span></div>
+            <div className="breadcrumb"><Link href="/">Home</Link><span>/</span><span>{eyebrow}</span></div>
             <p className="eyebrow"><span /> {eyebrow}</p>
             <h1>{title}</h1>
             <p>{intro}</p>

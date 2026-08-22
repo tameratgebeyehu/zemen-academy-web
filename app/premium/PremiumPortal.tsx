@@ -106,14 +106,17 @@ export function PremiumPortal() {
         setOverview(null);
       } else {
         setError(message);
-        if (view === "checking") setView("login");
+        setView((current) => current === "checking" ? "login" : current);
       }
     } finally {
       if (!quiet) setBusy(false);
     }
-  }, [view]);
+  }, []);
 
-  useEffect(() => { void loadOverview(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const timer = window.setTimeout(() => void loadOverview(), 0);
+    return () => window.clearTimeout(timer);
+  }, [loadOverview]);
 
   const requestOpen = overview?.request && ["pending", "under-review"].includes(overview.request.status);
   useEffect(() => {
