@@ -25,9 +25,11 @@ export default function Home() {
           <h1>Learn deeper.<br /><em>Move forward.</em></h1>
           <p className="hero-lede">Zemen Academy gives Grades 9–12 students a focused path through strong questions, understandable explanations, offline study and progress that feels real.</p>
           <div className="hero-actions">
-            <a className="button button-primary" href="https://app.zemenacademy.com">Start learning on the web <span aria-hidden="true">↗</span></a>
-            <a className="button button-secondary" href="/download#official-download">Get Android app</a>
-            <a className="button button-secondary" href="/features">Explore the platform</a>
+            <div className="hero-action-buttons">
+              <a className="button button-primary" href="https://app.zemenacademy.com">Start learning on the web <span aria-hidden="true">↗</span></a>
+              <a className="button button-secondary" href="/download#official-download">Get Android app</a>
+            </div>
+            <a className="hero-text-link" href="/features">Explore the platform <span aria-hidden="true">→</span></a>
           </div>
           <div className="trust-row" aria-label="Product highlights"><span>Grades 9–12</span><i /><span>Natural & Social</span><i /><span>Built for low data</span></div>
         </div>
